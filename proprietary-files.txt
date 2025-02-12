@@ -43,3 +43,9 @@ system_ext/lib64/libHeifEncoderWrapper.so
 system_ext/lib64/libNativeWinBuffExchange.so
 system_ext/lib64/liboplusheifwriter.so
 system_ext/priv-app/OplusAppPlatform/OplusAppPlatform.apk
+
+# Camera (SenseTime License)
+odm/etc/camera/model/license.lic
+odm/etc/camera/singleblur/license_release.license
+odm/etc/camera/singleblur/license_release.lic
+odm/etc/camera/license_release_fdc.lic

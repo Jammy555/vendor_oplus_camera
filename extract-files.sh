@@ -53,6 +53,14 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+        system_ext/priv-app/OplusCamera/OplusCamera.apk)
+            split --bytes=20M -d "${2}" "${2}".part
+            ;;
+    esac
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 

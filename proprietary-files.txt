@@ -29,6 +29,7 @@ my_product/lib64/libcoolex.so:system_ext/lib64/libcoolex.so
 my_product/lib64/libextendfile.so:system_ext/lib64/libextendfile.so
 my_product/lib64/libjni_wideselfie.so:system_ext/lib64/libjni_wideselfie.so
 my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.so;FIX_SONAME
+my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.qti.so;DISABLE_CHECKELF
 my_product/lib64/libjnistblur_api.so:system_ext/lib64/libjnistblur_api.so;FIX_SONAME
 my_product/lib64/libmpbase.so:system_ext/lib64/libmpbase.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libsingle_camera_bokeh_native.so:system_ext/lib64/libsingle_camera_bokeh_native.so

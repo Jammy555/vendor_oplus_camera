@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
     libcoolex \
     libextendfile \
     libjni_wideselfie \
+    libjnisingleblur_api.qti \
     libjnisingleblur_api \
     libjnistblur_api \
     libmpbase_system_ext \

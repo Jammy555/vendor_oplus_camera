@@ -22,12 +22,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.lens.oem_camera_package=com.oplus.camera \
     ro.com.google.lens.oem_image_package=com.oneplus.gallery
 
+
 # Photo
-TARGET_USES_OPLUS_CAMERA := true
-TARGET_CAMERA_PACKAGE_NAME := com.oplus.packageName
+$(call soong_config_set,camera,package_name,com.oplus.packageName)
 
 # Video
-TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
+$(call soong_config_set,camera,override_format_from_reserved,true)
 
 # Inherit from camera-vendor.mk
 $(call inherit-product, vendor/oplus/camera/camera-vendor.mk)
+
+# SEpolicy
+include vendor/oplus/camera/sepolicy/SEPolicy.mk

@@ -1029,6 +1029,7 @@ android_app_import {
     owner: "oplus",
     apk: "proprietary/system_ext/priv-app/OplusCamera/OplusCamera.apk",
     overrides: [
+        "Aperture",
         "Camera2",
         "GoogleCameraGo",
     ],

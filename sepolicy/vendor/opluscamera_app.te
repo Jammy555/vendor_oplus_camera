@@ -7,7 +7,6 @@ allow opluscamera_app public_adsprpcd_file:file r_file_perms;
 allow opluscamera_app vendor_camera_data_file:dir create_dir_perms;
 allow opluscamera_app vendor_camera_data_file:file create_file_perms;
 r_dir_file(opluscamera_app, vendor_persist_camera_file)
-
 allow opluscamera_app vendor_data_file:dir  { read open search write add_name remove_name create getattr rename setattr reparent rmdir };
 allow opluscamera_app vendor_data_file:file { read open write create unlink getattr rename setattr };
 allow opluscamera_app vendor_camera_update_data_file:file { read open write create unlink getattr rename setattr };

@@ -3,6 +3,9 @@
 //
 
 soong_namespace {
+    imports: [
+        "vendor/oneplus/lemonade",
+    ],
 }
 
 cc_prebuilt_library_shared {
@@ -403,7 +406,7 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libFileExtender-jni.so",
             ],
             shared_libs: [
-                "libextendfile",
+                "libextendfile_system_ext",
                 "liblog",
                 "libandroid",
                 "libEGL",
@@ -734,7 +737,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libextendfile",
+    name: "libextendfile_system_ext",
+    stem: "libextendfile",
     owner: "oplus",
     strip: {
         none: true,
@@ -786,6 +790,35 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libjnisingleblur_api.qti",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libjnisingleblur_api.qti.so",
+            ],
+            shared_libs: [
+                "libz",
+                "libjnigraphics",
+                "libvndksupport",
+                "liblog",
+                "libGLESv2",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libjnisingleblur_api",
     owner: "oplus",
     strip: {
@@ -811,33 +844,6 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libjnisingleblur_api.qti",
-	owner: "oplus",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/system_ext/lib64/libjnisingleblur_api.qti.so"],
-			shared_libs: [
-            "libz",
-            "libjnigraphics",
-            "libvndksupport",
-            "liblog",
-            "libGLESv2",
-            "libm",
-            "libdl",
-            "libc",
-            ],
-		},
-	},
-	compile_multilib: "64",
-	check_elf_files: false,
-	prefer: true,
-	system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -917,6 +923,7 @@ cc_prebuilt_library_shared {
                 "libgui",
                 "libbase",
                 "libjpeg",
+                "libjnigraphics",
                 "libc++",
                 "libc",
                 "libm",
@@ -1010,6 +1017,135 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libextendfile",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/odm/lib/libextendfile.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libextendfile.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmsnativefilter",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/odm/lib/libmsnativefilter.so",
+            ],
+            shared_libs: [
+                "libz",
+                "liblog",
+                "libEGL",
+                "libGLESv2",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libmsnativefilter.so",
+            ],
+            shared_libs: [
+                "libz",
+                "liblog",
+                "libEGL",
+                "libGLESv2",
+                "libm",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libFilterWrapper",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libFilterWrapper.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libPolarrRender",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaideblur",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libaideblur.so",
+            ],
+            shared_libs: [
+                "libSNPE",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
 }
 
 android_app_import {

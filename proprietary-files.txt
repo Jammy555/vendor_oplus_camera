@@ -2,6 +2,9 @@
 ## are from Oneplus 11 5G (CPH2449_14.0.0.401(EX01)).
 
 # Camera
+# OplusCamera.apk and camera unit SDK jars are overridden from camera5.0-fix_oos.zip.
+# OplusAppPlatform.apk and matching camera libs are from the OOS16 dump.
+# oplus-support-wrapper.jar remains from the 16 branch baseline; it is not present in the OOS16 dump.
 my_product/app/OplusCamera/OplusCamera.apk:system_ext/priv-app/OplusCamera/OplusCamera.apk;OVERRIDES=Aperture,Camera2,GoogleCameraGo
 my_product/lib64/libAPSClient-cmd-jni.so:system_ext/lib64/libAPSClient-cmd-jni.so
 my_product/lib64/libAPSClient-jni.so:system_ext/lib64/libAPSClient-jni.so
@@ -26,7 +29,7 @@ my_product/lib64/libarcsoft_wideselfie.so:system_ext/lib64/libarcsoft_wideselfie
 my_product/lib64/libcolorx-loader.so:system_ext/lib64/libcolorx-loader.so
 my_product/lib64/libcolorx.so:system_ext/lib64/libcolorx.so
 my_product/lib64/libcoolex.so:system_ext/lib64/libcoolex.so
-my_product/lib64/libextendfile.so:system_ext/lib64/libextendfile.so
+my_product/lib64/libextendfile.so:system_ext/lib64/libextendfile.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libjni_wideselfie.so:system_ext/lib64/libjni_wideselfie.so
 my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.so;FIX_SONAME
 my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.qti.so;DISABLE_CHECKELF
@@ -44,6 +47,14 @@ system_ext/lib64/libNativeWinBuffExchange.so
 system_ext/lib64/liboplusheifwriter.so
 system_ext/lib64/libpenguin.so:vendor/lib64/libpenguin.so
 system_ext/priv-app/OplusAppPlatform/OplusAppPlatform.apk
+
+# Camera5.0 ODM companion libraries
+odm/lib/libextendfile.so
+odm/lib/libmsnativefilter.so
+odm/lib64/libaideblur.so
+odm/lib64/libFilterWrapper.so
+odm/lib64/libextendfile.so
+odm/lib64/libmsnativefilter.so
 
 # Camera (SenseTime License)
 odm/etc/camera/model/license.lic

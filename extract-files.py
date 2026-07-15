@@ -13,6 +13,10 @@ from extract_utils.main import (
     ExtractUtilsModule,
 )
 
+namespace_imports = [
+    'vendor/oneplus/lemonade',
+]
+
 
 def lib_fixup_system_ext_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'system_ext' else None
@@ -24,6 +28,7 @@ lib_fixups: lib_fixups_user_type = {
         'libSuperTextWrapper',
         'libXDocProcessSDK',
         'libYTCommon',
+        'libextendfile',
         'libmpbase',
     ): lib_fixup_system_ext_suffix,
 }
@@ -31,6 +36,7 @@ lib_fixups: lib_fixups_user_type = {
 module = ExtractUtilsModule(
     'camera',
     'oplus',
+    namespace_imports=namespace_imports,
     lib_fixups=lib_fixups,
     device_rel_path='vendor/oplus/camera',
 )

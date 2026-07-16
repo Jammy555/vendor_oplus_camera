@@ -15,6 +15,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'vendor/oneplus/lemonade',
+    'hardware/oplus',
 ]
 
 

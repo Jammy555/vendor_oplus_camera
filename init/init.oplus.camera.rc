@@ -12,6 +12,10 @@ on post-fs-data
     chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
     mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
 
+    # APS file storage for deferred-capture jobs (matches stock init.oplus.rootdir.rc).
+    mkdir /data/system/camera_rus 0777 cameraserver cameraserver
+    mkdir /data/vendor/camera_rus 0777 camera camera
+
 on boot
     # OIS
     chown cameraserver cameraserver /sys/kernel/ois_control/dump_registers

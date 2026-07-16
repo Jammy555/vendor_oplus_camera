@@ -5,7 +5,35 @@
 soong_namespace {
     imports: [
         "vendor/oneplus/lemonade",
+        "hardware/oplus",
     ],
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.cameraextension@1.0",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/vendor.oplus.hardware.cameraextension@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
 }
 
 cc_prebuilt_library_shared {
@@ -30,6 +58,105 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     prefer: true,
     soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libapssuspend-jni.oplus",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/system_ext/lib/libapssuspend-jni.oplus.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libbase",
+                "libbinder_ndk",
+                "android.system.suspend-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libapssuspend-jni.oplus.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libbase",
+                "libbinder_ndk",
+                "android.system.suspend-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libAPSClient-alog-jni",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libAPSClient-alog-jni.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "liblog",
+                "libandroid",
+                "libnativewindow",
+                "libjnigraphics",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libAPSClient-cmd-jni-extension.oplus",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libAPSClient-cmd-jni-extension.oplus.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "liblog",
+                "libandroid",
+                "libnativewindow",
+                "libjnigraphics",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
 }
 
 cc_prebuilt_library_shared {
@@ -278,6 +405,37 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libApsSuperEISPreviewJni",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libApsSuperEISPreviewJni.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "liblog",
+                "libandroid",
+                "libjnigraphics",
+                "libEGL",
+                "libGLESv1_CM",
+                "libGLESv3",
+                "libz",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libAvatarEngineRender",
     owner: "oplus",
     strip: {
@@ -423,6 +581,34 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libHdrTransform-platform-jni",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libHdrTransform-platform-jni.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "liblog",
+                "libandroid",
+                "libnativewindow",
+                "libjnigraphics",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libHeifEncoderWrapper",
     owner: "oplus",
     strip: {
@@ -451,6 +637,65 @@ cc_prebuilt_library_shared {
                 "libc",
                 "libm",
                 "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libHeifWinBufExchg-jni",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libHeifWinBufExchg-jni.so",
+            ],
+            shared_libs: [
+                "libHeifEncoderWrapper",
+                "libNativeWinBuffExchange",
+                "liblog",
+                "libandroid",
+                "libjnigraphics",
+                "libGLESv2",
+                "libEGL",
+                "libnativewindow",
+                "libz",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libMsEffectSdk",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libMsEffectSdk.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "libandroid",
+                "libjnigraphics",
+                "liblog",
+                "libm",
+                "libdl",
+                "libc",
             ],
         },
     },
@@ -507,6 +752,60 @@ cc_prebuilt_library_shared {
                 "libandroid",
                 "libc",
                 "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOplusStringJNI-extension.oplus",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libOplusStringJNI-extension.oplus.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "liblog",
+                "libandroid",
+                "libc",
+                "libm",
+                "libstdc++",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOplusStringJNI",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libOplusStringJNI.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "liblog",
+                "libandroid",
+                "libc",
+                "libm",
+                "libstdc++",
                 "libdl",
             ],
         },
@@ -628,6 +927,30 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libarcsoft_panorama_burstcapture",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libarcsoft_panorama_burstcapture.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libdl",
+                "libc",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libarcsoft_wideselfie",
     owner: "oplus",
     strip: {
@@ -653,7 +976,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libcolorx-loader",
+    name: "libbsproxy",
     owner: "oplus",
     strip: {
         none: true,
@@ -661,42 +984,13 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libcolorx-loader.so",
+                "proprietary/system_ext/lib64/libbsproxy.so",
             ],
             shared_libs: [
-                "liblog",
-                "libcutils",
-                "libutilscallstack",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libcolorx",
-    owner: "oplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libcolorx.so",
-            ],
-            shared_libs: [
-                "liblog",
                 "libbinder",
                 "libutils",
-                "libcutils",
-                "libutilscallstack",
-                "libz",
+                "liblog",
+                "liboplus-uah-client",
                 "libc++",
                 "libc",
                 "libm",
@@ -710,7 +1004,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libcoolex",
+    name: "libcsextimpl",
     owner: "oplus",
     strip: {
         none: true,
@@ -718,12 +1012,59 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/system_ext/lib64/libcoolex.so",
+                "proprietary/system_ext/lib64/libcsextimpl.so",
             ],
             shared_libs: [
+                "camera_platform_flags_c_lib",
+                "libbase",
+                "libexif",
+                "libui",
                 "liblog",
+                "libutilscallstack",
+                "libutils",
                 "libbinder",
-                "libcolorx",
+                "libbinder_ndk",
+                "libcutils",
+                "libpermission",
+                "libmedia",
+                "libmediautils",
+                "libcamera_client",
+                "libcamera_metadata",
+                "libdynamic_depth",
+                "libfmq",
+                "libgui",
+                "libhardware",
+                "libhidlbase",
+                "libimage_io",
+                "libjpeg",
+                "libmedia_codeclist",
+                "libmedia_omx",
+                "libmemunreachable",
+                "libsensorprivacy",
+                "libstagefright",
+                "libstagefright_foundation",
+                "libxml2",
+                "libyuv",
+                "android.frameworks.cameraservice.common@2.0",
+                "android.frameworks.cameraservice.service@2.2",
+                "android.frameworks.cameraservice.device@2.0",
+                "android.hardware.camera.common@1.0",
+                "android.hardware.camera.provider-V3-ndk",
+                "android.hardware.camera.provider@2.7",
+                "android.hardware.camera.device@3.6",
+                "android.hardware.camera.device-V3-ndk",
+                "android.frameworks.sensorservice@1.0",
+                "android.hardware.sensors@1.0",
+                "vendor.oplus.hardware.cameraMDM@1.0",
+                "libcameraservice",
+                "libnativewindow",
+                "libvndksupport",
+                "android.hardware.thermal@1.0",
+                "vendor.oplus.hardware.performance-V1-ndk",
+                "vendor.oplus.hardware.cameraextension@1.0",
+                "vendor.oplus.hardware.sendextcamcmd-V2-ndk",
+                "vendor.oplus.hardware.cameraextension-V1-ndk",
+                "libbsproxy",
                 "libc++",
                 "libc",
                 "libm",
@@ -753,6 +1094,35 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libdl",
                 "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libjni_burstpmk",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libjni_burstpmk.so",
+            ],
+            shared_libs: [
+                "libjnigraphics",
+                "liblog",
+                "libandroid",
+                "libc",
+                "libm",
+                "libstdc++",
+                "libdl",
+                "libmpbase_system_ext",
+                "libarcsoft_panorama_burstcapture",
             ],
         },
     },
@@ -875,6 +1245,35 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "liblivephoto.frc.jni",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/liblivephoto.frc.jni.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "libmpbase_system_ext",
+                "liblog",
+                "libandroid",
+                "libjnigraphics",
+                "libnativewindow",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libmpbase_system_ext",
     stem: "libmpbase",
     owner: "oplus",
@@ -888,6 +1287,37 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liboplus-uah-client_system_ext",
+    stem: "liboplus-uah-client",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/liboplus-uah-client.so",
+            ],
+            shared_libs: [
+                "vendor.oplus.hardware.urcc-V1-ndk",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libbinder_ndk",
+                "libbinder",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
             ],
         },
     },
@@ -928,6 +1358,66 @@ cc_prebuilt_library_shared {
                 "libc",
                 "libm",
                 "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liboplushwui_jni",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/liboplushwui_jni.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "libandroid",
+                "libandroid_runtime",
+                "libhwui",
+                "libandroidfw",
+                "liblog",
+                "libharfbuzz_ng",
+                "libminikin",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsingle_camera_bokeh2_native",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libsingle_camera_bokeh2_native.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libGLESv3",
+                "libEGL",
+                "libnativewindow",
+                "libmpbase_system_ext",
+                "libm",
+                "libdl",
+                "libc",
             ],
         },
     },
@@ -1011,6 +1501,59 @@ cc_prebuilt_library_shared {
                 "libm",
                 "libdl",
                 "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsuperNight.oplus",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libsuperNight.oplus.so",
+            ],
+            shared_libs: [
+                "libvndksupport",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.cameraMDM@1.0",
+    owner: "oplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.oplus.hardware.cameraMDM@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
             ],
         },
     },
@@ -1175,14 +1718,6 @@ android_app_import {
     },
     privileged: true,
     system_ext_specific: true,
-}
-
-dex_import {
-    name: "oplus-support-wrapper",
-    owner: "oplus",
-    jars: [
-        "proprietary/system/framework/oplus-support-wrapper.jar",
-    ],
 }
 
 dex_import {

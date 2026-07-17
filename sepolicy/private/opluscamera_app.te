@@ -1,0 +1,25 @@
+# Camera private policy rules
+allow opluscamera_app activity_service:service_manager find;
+allow opluscamera_app audioserver_service:service_manager find;
+allow opluscamera_app cameraserver_service:service_manager find;
+allow opluscamera_app mediaextractor_service:service_manager find;
+allow opluscamera_app mediaserver_service:service_manager find;
+allow opluscamera_app mediametrics_service:service_manager find;
+allow opluscamera_app media_session_service:service_manager find;
+allow opluscamera_app surfaceflinger_service:service_manager find;
+allow opluscamera_app gpu_service:service_manager find;
+allow opluscamera_app mnt_user_file:dir search;
+allow opluscamera_app mnt_user_file:lnk_file read;
+allow opluscamera_app storage_file:dir search;
+allow opluscamera_app storage_file:lnk_file read;
+allow opluscamera_app sdcardfs:dir create_dir_perms;
+allow opluscamera_app sdcardfs:file create_file_perms;
+allow opluscamera_app media_rw_data_file:dir create_dir_perms;
+allow opluscamera_app media_rw_data_file:file create_file_perms;
+allow opluscamera_app app_api_service:service_manager find;
+allow opluscamera_app system_api_service:service_manager find;
+
+# Binder communication
+binder_call(opluscamera_app, system_server)
+binder_call(opluscamera_app, surfaceflinger)
+binder_call(opluscamera_app, cameraserver)

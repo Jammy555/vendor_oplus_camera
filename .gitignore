@@ -1,0 +1,4 @@
+*.patched
+OplusCamera_decompiled/
+com.oplus.camera.unit.sdk_decompiled/
+proprietary/system_ext/priv-app/OplusCamera/OplusCamera.apk

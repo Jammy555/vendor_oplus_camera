@@ -35,39 +35,38 @@ binder_use(opluscamera_app)
 binder_call(opluscamera_app, cameraserver)
 binder_call(opluscamera_app, surfaceflinger)
 binder_call(opluscamera_app, system_server)
-allow opluscamera_app hal_camera_default:binder { call transfer };
-allow opluscamera_app vendor_hal_qspmhal_default:binder { call transfer };
+# allow opluscamera_app hal_camera_default:binder { call transfer };
+# allow opluscamera_app vendor_hal_qspmhal_default:binder { call transfer };
 
-# ADSP / CDSP RPC
-allow opluscamera_app adsprpcd_file:dir { r_dir_perms search };
-allow opluscamera_app public_adsprpcd_file:file r_file_perms;
-allow opluscamera_app vendor_qdsp_device:chr_file { ioctl read };
-allow opluscamera_app vendor_qdsp_device:file { read open write create unlink getattr };
-allow opluscamera_app vendor_qdsp_device:dir { read open search write add_name remove_name create getattr };
-allow opluscamera_app vendor_xdsp_device:chr_file { read open write create unlink getattr ioctl };
-allow opluscamera_app vendor_xdsp_device:file { read open write create unlink getattr };
-allow opluscamera_app vendor_xdsp_device:dir { read open search write add_name remove_name create getattr };
+# ADSP / CDSP RPC (commented out to avoid unknown type compilation errors in system_ext; permitted in permissive mode)
+# allow opluscamera_app adsprpcd_file:dir { r_dir_perms search };
+# allow opluscamera_app public_adsprpcd_file:file r_file_perms;
+# allow opluscamera_app vendor_qdsp_device:chr_file { ioctl read };
+# allow opluscamera_app vendor_qdsp_device:file { read open write create unlink getattr };
+# allow opluscamera_app vendor_qdsp_device:dir { read open search write add_name remove_name create getattr };
+# allow opluscamera_app vendor_xdsp_device:chr_file { read open write create unlink getattr ioctl };
+# allow opluscamera_app vendor_xdsp_device:file { read open write create unlink getattr };
+# allow opluscamera_app vendor_xdsp_device:dir { read open search write add_name remove_name create getattr };
 
 # Proc files
-allow opluscamera_app proc_ufs_file:file { read open write create getattr };
+# allow opluscamera_app proc_ufs_file:file { read open write create getattr };
 
 # App data
 allow opluscamera_app opluscamera_app_data_file:dir create_dir_perms;
 allow opluscamera_app opluscamera_app_data_file:file create_file_perms;
 
-# Vendor data / persist camera files
-allow opluscamera_app vendor_camera_data_file:dir create_dir_perms;
-allow opluscamera_app vendor_camera_data_file:file create_file_perms;
-allow opluscamera_app vendor_camera_update_data_file:dir create_dir_perms;
-allow opluscamera_app vendor_camera_update_data_file:file create_file_perms;
-r_dir_file(opluscamera_app, vendor_persist_camera_file)
-allow opluscamera_app vendor_data_file:dir { read open search write add_name remove_name create getattr rename setattr reparent rmdir };
-allow opluscamera_app vendor_data_file:file { read open write create unlink getattr rename setattr };
+# Vendor data / persist camera files (commented out to avoid coredomain neverallow violations; permitted at runtime in permissive mode)
+# allow opluscamera_app vendor_camera_data_file:dir create_dir_perms;
+# allow opluscamera_app vendor_camera_data_file:file create_file_perms;
+# allow opluscamera_app vendor_camera_update_data_file:dir create_dir_perms;
+# allow opluscamera_app vendor_camera_update_data_file:file create_file_perms;
+# r_dir_file(opluscamera_app, vendor_persist_camera_file)
+# allow opluscamera_app vendor_data_file:dir { read open search write add_name remove_name create getattr rename setattr reparent rmdir };
+# allow opluscamera_app vendor_data_file:file { read open write create unlink getattr rename setattr };
 
-# Properties
-get_prop(opluscamera_app, vendor_camera_prop)
-get_prop(opluscamera_app, camera_config_prop)
-allow opluscamera_app vendor_default_prop:file { open read getattr map };
+# get_prop(opluscamera_app, vendor_camera_prop)
+# get_prop(opluscamera_app, camera_config_prop)
+# allow opluscamera_app vendor_default_prop:file { open read getattr map };
 dontaudit opluscamera_app default_prop:file { read open getattr map };
 
 # Selinuxfs

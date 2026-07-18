@@ -67,8 +67,10 @@ PRODUCT_PACKAGES += \
     libst_sticker_jni \
     libsuperNight.oplus \
     vendor.oplus.hardware.cameraMDM@1.0 \
+    lib2DSlender \
     libextendfile \
     libmsnativefilter \
+    libFaceBeautyJni \
     libFilterWrapper \
     libaideblur \
     OplusAppPlatform \

@@ -13,7 +13,34 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/oplus.feature.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/oplus.feature.android.xml \
     $(LOCAL_PATH)/configs/sysconfig/hiddenapi-package-oplus-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-oplus-whitelist.xml
 
-# Properties
+# System Ext Camera Properties
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.sys.oplus.anim_level=1 \
+    persist.sys.oplus.region=ZA \
+    ro.build.release_type=true \
+    ro.oplus.camera.defercap.support=1 \
+    ro.oplus.display.screenhole.positon=67,36:132,101 \
+    ro.oplus.theme.version=16000 \
+    ro.version.confidential=false \
+    ro.build.version.module.sub_api=2 \
+    ro.build.version.oplus.api=38 \
+    ro.build.version.oplus.sub_api=47 \
+    ro.build.version.oplusrom=V16.1.0 \
+    ro.build.version.oplusrom.confidential=V16.1.0 \
+    ro.build.version.oplusrom.display=16.0.8 \
+    ro.oplus.fusionlight=true \
+    ro.oplus.pipeline.region=IN \
+    ro.oplus.product.series=flagship_series \
+    ro.oplus.camera.defercap.all.quick.visible.support=1
+
+# Vendor Camera Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.camera.privapp.list=com.oplus.camera,org.codeaurora.snapcam,lv.mcprotector.mcpro24fps \
+    vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings \
+    ro.vendor.oplus.market.enname=OnePlus\ 9\ 5G \
+    ro.vendor.oplus.market.name=OnePlus\ 9\ 5G
+
+# Product Camera Properties
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.vendor.camera.privapp.list=com.oplus.camera \
     ro.com.google.lens.oem_camera_package=com.oplus.camera \
@@ -46,7 +73,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.logd.log.load.vendor.qti.camera.provider-service_64.threshold=400000 \
     persist.logd.log.load.vendor.qti.camera.provider-service_64.upper_limit=1500
 
-
 # Photo
 $(call soong_config_set,camera,package_name,com.oplus.packageName)
 $(call soong_config_set,camera,allow_nonincreasing_timestamps,true)
@@ -63,4 +89,3 @@ $(call inherit-product, vendor/oplus/camera/camera-vendor.mk)
 
 # SEpolicy
 include vendor/oplus/camera/sepolicy/SEPolicy.mk
-

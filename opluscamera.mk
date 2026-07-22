@@ -14,7 +14,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sysconfig/hiddenapi-package-oplus-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-oplus-whitelist.xml
 
 # System Ext Camera Properties
-#PRODUCT_SYSTEM_EXT_PROPERTIES += \
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.sys.oplus.anim_level=1 \
     persist.sys.oplus.region=ZA \
     ro.build.release_type=true \
@@ -52,7 +52,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.oplus.camera.portrait_center.prefix=oplus.portrait.center. \
     ro.oplus.camera.video.beauty.switch=oplus.switch.video.beauty \
     ro.oplus.camera.video_beauty.prefix=oplus.video.beauty.
-    #ro.oplus.camera.speechassist=true \
+    ro.oplus.camera.speechassist=true \
     oplus.software.camera.10bit=1 \
     ro.oplus.system.camera.flashlight=com.oplus.motor.flashlight \
     ro.camera.privileged.3rdpartyApp=com.mediatek.expert.mtkcamhelper;com.aiunit.aon; \
@@ -73,9 +73,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Photo
 $(call soong_config_set,camera,package_name,com.oplus.packageName)
-$(call soong_config_set,camera,allow_nonincreasing_timestamps,true)
-$(call soong_config_set,libgui,num_buffer_slots,96)
-
 # Video
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
 

@@ -144,7 +144,6 @@ PRODUCT_PACKAGES += \
     libjnisingleblur_api \
     libjnistblur_api \
     liblivephoto.frc.jni \
-    libmpbase_system_ext \
     liboplus-uah-client_system_ext \
     liboplusheifwriter \
     liboplushwui_jni \
@@ -156,20 +155,7 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.cameraMDM@1.0 \
     libextendfile \
     libmsnativefilter \
-    libAlgoInterface \
-    libAlgoProcess \
-    libPolarrRender \
-    libPreviewDecisionOld \
-    libSNPE \
-    libapsexif \
-    libapsjpeg \
-    libexif-jpeg-aps \
-    libmpbase \
-    libosenseaidlhalclient \
     com.oplus.node.pilot \
-    com.oplus.node.preview \
-    com.oplus.node.rtb \
-    com.oplus.node.videoenhance \
     libAncFilter \
     libAncHumBokeh \
     libAncHumBokehPost \
@@ -191,7 +177,6 @@ PRODUCT_PACKAGES += \
     libalCFR \
     libarcsoft_long_exposure_capture \
     libeffect_custom \
-    libnightvision \
     libsharebuffer_impl \
     OplusAppPlatform \
     OplusCamera \

@@ -15,6 +15,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'vendor/oneplus/lemonade',
+    'vendor/oneplus/sm8350-common',
     'hardware/oplus',
 ]
 
@@ -30,7 +31,6 @@ lib_fixups: lib_fixups_user_type = {
         'libXDocProcessSDK',
         'libYTCommon',
         'libextendfile',
-        'libmpbase',
     ): lib_fixup_system_ext_suffix,
 }
 

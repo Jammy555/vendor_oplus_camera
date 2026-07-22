@@ -31,7 +31,6 @@ my_product/lib64/libjni_wideselfie.so:system_ext/lib64/libjni_wideselfie.so
 my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.so;FIX_SONAME
 my_product/lib64/libjnisingleblur_api.so:system_ext/lib64/libjnisingleblur_api.qti.so;FIX_SONAME
 my_product/lib64/libjnistblur_api.so:system_ext/lib64/libjnistblur_api.so;FIX_SONAME
-my_product/lib64/libmpbase.so:system_ext/lib64/libmpbase.so;MODULE_SUFFIX=_system_ext
 my_product/lib64/libsingle_camera_bokeh_native.so:system_ext/lib64/libsingle_camera_bokeh_native.so
 my_product/lib64/libst_mobile.so:system_ext/lib64/libst_mobile.so
 my_product/lib64/libst_sticker_jni.so:system_ext/lib64/libst_sticker_jni.so;FIX_SONAME
@@ -86,9 +85,6 @@ system/lib64/vendor.oplus.hardware.cameraextension@1.0.so
 
 # Camera components & nodes
 odm/lib64/camera/components/com.oplus.node.pilot.so
-odm/lib64/camera/components/com.oplus.node.preview.so
-odm/lib64/camera/components/com.oplus.node.rtb.so
-odm/lib64/camera/components/com.oplus.node.videoenhance.so
 odm/lib64/libAncFilter.so
 odm/lib64/libAncHumBokehPost.so
 odm/lib64/libAncHumBokeh.so
@@ -108,7 +104,6 @@ odm/lib64/libaiseg.so
 odm/lib64/libalCFR.so
 odm/lib64/libarcsoft_long_exposure_capture.so;FIX_SONAME
 odm/lib64/libeffect_custom.so
-odm/lib64/libnightvision.so;FIX_SONAME
 
 # Camera stock helper libraries
 odm/lib64/libsharebuffer_impl.so
@@ -203,13 +198,3 @@ odm/etc/camera/selfbokehmodel.bin
 odm/etc/init/init.camera_process.rc
 
 # 32-bit camera dependencies
-odm/lib/libAlgoInterface.so
-odm/lib/libAlgoProcess.so
-odm/lib/libPreviewDecisionOld.so
-odm/lib/libPolarrRender.so
-odm/lib/libSNPE.so
-odm/lib/libapsexif.so
-odm/lib/libapsjpeg.so
-odm/lib/libexif-jpeg-aps.so
-odm/lib/libmpbase.so
-odm/lib/libosenseaidlhalclient.so

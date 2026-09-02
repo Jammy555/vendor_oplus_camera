@@ -26,14 +26,14 @@ patch_camera_apk() {
     python3 vendor/oplus/camera/patch_camera.py "$decompiled_dir"
     local patch_status=$?
 
-    if [ ! -f "$marker" ] || [ $patch_status -eq 10 ]; then
+    if [ $patch_status -eq 10 ]; then
         echo "OplusCamera: Rebuilding patched APK..."
         java -jar "$apktool_jar" b --frame-path "$frame_dir" "$decompiled_dir" -o "${apk_dir}/OplusCamera.apk"
-        touch "$marker"
         echo "OplusCamera: Patched and rebuilt successfully."
     else
         echo "OplusCamera: APK already patched (no changes)."
     fi
+    touch "$marker"
 }
 
 # Automate OplusCamera SDK Jar Patching
@@ -57,14 +57,14 @@ patch_camera_sdk() {
     python3 vendor/oplus/camera/patch_camera.py "$decompiled_dir"
     local patch_status=$?
 
-    if [ ! -f "$marker" ] || [ $patch_status -eq 10 ]; then
+    if [ $patch_status -eq 10 ]; then
         echo "OplusCameraSDK: Rebuilding patched SDK jar..."
         java -jar "$apktool_jar" b --frame-path "$frame_dir" "$decompiled_dir" -o "${sdk_dir}/com.oplus.camera.unit.sdk.jar"
-        touch "$marker"
         echo "OplusCameraSDK: Patched and rebuilt successfully."
     else
         echo "OplusCameraSDK: SDK jar already patched (no changes)."
     fi
+    touch "$marker"
 }
 
 patch_camera_apk

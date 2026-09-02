@@ -140,7 +140,12 @@ def patch_ah_a(content):
     return content.replace('if-nez p0, :cond_2', 'goto :cond_2')
 
 def patch_provider_utils(content):
-    if "# patch_provider_utils" in content:
+    # Smali comments do not survive apktool's assemble/disassemble round trip.
+    # Check the labels emitted by this patch as well, otherwise a subsequent
+    # envsetup invocation injects the same try/catch blocks a second time and
+    # apktool rejects the duplicate labels.
+    if ("# patch_provider_utils" in content or
+            (":try_start_0" in content and ":catch_0" in content)):
         return content
     # Call
     pattern_call = re.compile(

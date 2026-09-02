@@ -2,8 +2,10 @@
 ## are from Oneplus 11 5G (CPH2449_14.0.0.401(EX01)).
 
 # Camera
-# OplusCamera.apk and camera unit SDK jars are overridden from camera5.0-fix_oos.zip.
-# OplusAppPlatform.apk and matching camera libs are from the OOS16 dump.
+# OplusCamera.apk and CameraUnit jars are from the stock OnePlus 9
+# LE2113_16.0.10.500(EX01) OOS16 payload.  The APK and main SDK jar carry the
+# documented AOSP compatibility patches; the adapter jar stays stock.
+# OplusAppPlatform.apk is from the same OOS16 payload.
 # oplus-support-wrapper.jar remains from the 16 branch baseline; it is not present in the OOS16 dump.
 my_product/app/OplusCamera/OplusCamera.apk:system_ext/priv-app/OplusCamera/OplusCamera.apk;OVERRIDES=Aperture,Camera2,GoogleCameraGo
 my_product/lib64/libAPSClient-cmd-jni.so:system_ext/lib64/libAPSClient-cmd-jni.so

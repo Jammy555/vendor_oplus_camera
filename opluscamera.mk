@@ -33,10 +33,9 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.oplus.product.series=flagship_series \
     ro.oplus.camera.defercap.all.quick.visible.support=1
 
-# Vendor Camera Properties
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.oplus.market.enname=OnePlus\ 9\ 5G \
-    ro.vendor.oplus.market.name=OnePlus\ 9\ 5G
+# The stock ODM build.prop owns the whitespace-containing market name
+# (`OnePlus 9`). Do not add it through PRODUCT_VENDOR_PROPERTIES: escaped
+# spaces become separate JSON tokens in the A16 product-config generator.
 
 # Product Camera Properties
 PRODUCT_PRODUCT_PROPERTIES += \

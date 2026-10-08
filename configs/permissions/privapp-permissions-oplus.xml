@@ -57,4 +57,7 @@
         <permission name="android.permission.MANAGE_USERS"/>
         <permission name="android.permission.INSTALL_PACKAGES"/>
     </privapp-permissions>
+
+    <!-- OPLUS Display Wide Color Gamut 2.0 Feature -->
+    <feature name="oplus.software.display.wcg_2.0_support" />
 </permissions>
